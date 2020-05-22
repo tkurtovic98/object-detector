@@ -1,11 +1,8 @@
 import 'dart:io';
-import 'dart:math';
-import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
-import 'package:image/image.dart' as img;
 
 class StaticImagePreviewer extends StatefulWidget {
   @override
@@ -19,22 +16,46 @@ class _StaticImagePreviewerState extends State<StaticImagePreviewer> {
   double _imageWidth;
   bool _busy = false;
 
-  Future predictImagePicker() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.camera);
+  Future predictImagePicker(ImageSource option) async {
+    _image = null;
+    var image = await ImagePicker.pickImage(source: option);
     if (image == null) return;
-    setState(() {
-      _busy = true;
-    });
+    setState(() => _busy = true);
     predictImage(image);
+  }
+
+  Future<void> imagePickerOptions() async {
+    var option = await showDialog<ImageSource>(
+        context: context,
+        builder: (BuildContext context) {
+          return SimpleDialog(
+            title: const Text('Select photo source'),
+            children: <Widget>[
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, ImageSource.gallery);
+                },
+                child: const Text('Gallery'),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, ImageSource.camera);
+                },
+                child: const Text('Camera'),
+              ),
+            ],
+          );
+        });
+    predictImagePicker(option);
   }
 
   Future predictImage(File image) async {
     if (image == null) return;
-    
-    await yolov2Tiny(image);
+
+    await runModel(image);
 
     new FileImage(image)
-        .resolve(new ImageConfiguration())
+        .resolve(ImageConfiguration())
         .addListener(ImageStreamListener((ImageInfo info, bool _) {
       setState(() {
         _imageHeight = info.image.height.toDouble();
@@ -51,98 +72,30 @@ class _StaticImagePreviewerState extends State<StaticImagePreviewer> {
   @override
   void initState() {
     super.initState();
-
     _busy = true;
-
-    loadModel().then((val) {
-      setState(() {
-        _busy = false; 
-      });
-    });
+    loadModel().then((value) => setState(() => _busy = false));
   }
 
   Future loadModel() async {
     Tflite.close();
-    try{
-     final res = await Tflite.loadModel(
-            model: "assets/yolov2_tiny.tflite",
-            labels: "assets/yolov2_tiny.txt",
-          );
-    } on PlatformException{
+    try {
+      final res = await Tflite.loadModel(
+          model: "assets/ssd-tflite-model.tflite",
+          labels: "assets/pet_label_list.txt");
+
+      print('Model loaded: ' + res);
+    } on PlatformException {
       print('Failed to load model.');
     }
   }
 
-  Uint8List imageToByteListFloat32(img.Image image, int inputSize, double mean, double std) {
-    var convertedBytes = Float32List(1 * inputSize * inputSize * 3);
-    var buffer = Float32List.view(convertedBytes.buffer);
-    int pixelIndex = 0;
-    for (var i = 0; i < inputSize; i++) {
-      for (var j = 0; j < inputSize; j++) {
-        var pixel = image.getPixel(j, i);
-        buffer[pixelIndex++] = (img.getRed(pixel) - mean) / std;
-        buffer[pixelIndex++] = (img.getGreen(pixel) - mean) / std;
-        buffer[pixelIndex++] = (img.getBlue(pixel) - mean) / std;
-      }
-    }
-    return convertedBytes.buffer.asUint8List();
-  }
-
-  Uint8List imageToByteListUint8(img.Image image, int inputSize) {
-    var convertedBytes = Uint8List(1 * inputSize * inputSize * 3);
-    var buffer = Uint8List.view(convertedBytes.buffer);
-    int pixelIndex = 0;
-    for (var i = 0; i < inputSize; i++) {
-      for (var j = 0; j < inputSize; j++) {
-        var pixel = image.getPixel(j, i);
-        buffer[pixelIndex++] = img.getRed(pixel);
-        buffer[pixelIndex++] = img.getGreen(pixel);
-        buffer[pixelIndex++] = img.getBlue(pixel);
-      }
-    }
-    return convertedBytes.buffer.asUint8List();
-  }
-
-  Future recognizeImage(File image) async {
-    var recognitions = await Tflite.runModelOnImage(
-      path: image.path,
-      numResults: 6,
-      threshold: 0.05,
-      imageMean: 127.5,
-      imageStd: 127.5,
-    );
-    setState(() {
-      _recognitions = recognitions;
-    });
-  }
-
-  Future recognizeImageBinary(File image) async {
-    var imageBytes = (await rootBundle.load(image.path)).buffer;
-    img.Image oriImage = img.decodeJpg(imageBytes.asUint8List());
-    img.Image resizedImage = img.copyResize(oriImage, height: 224, width: 224);
-    var recognitions = await Tflite.runModelOnBinary(
-      binary: imageToByteListFloat32(resizedImage, 224, 127.5, 127.5),
-      numResults: 6,
-      threshold: 0.05,
-    );
-    setState(() {
-      _recognitions = recognitions;
-    });
-  }
-
-  Future yolov2Tiny(File image) async {
+  Future runModel(File image) async {
     var recognitions = await Tflite.detectObjectOnImage(
-      path: image.path,
-      model: "YOLO",
-      threshold: 0.3,
-      imageMean: 0.0,
-      imageStd: 255.0,
-      numResultsPerClass: 1,
-    );
-
-    setState(() {
-      _recognitions = recognitions;
-    });
+        path: image.path,
+        numResultsPerClass: 2, // defaults to 5
+        threshold: 0.4, // defaults to 0.1
+        );
+    setState(() => _recognitions = recognitions);
   }
 
   List<Widget> renderBoxes(Size screen) {
@@ -179,53 +132,18 @@ class _StaticImagePreviewerState extends State<StaticImagePreviewer> {
     }).toList();
   }
 
-  List<Widget> renderKeypoints(Size screen) {
-    if (_recognitions == null) return [];
-    if (_imageHeight == null || _imageWidth == null) return [];
-
-    double factorX = screen.width;
-    double factorY = _imageHeight / _imageWidth * screen.width;
-
-    var lists = <Widget>[];
-    _recognitions.forEach((re) {
-      var color = Color((Random().nextDouble() * 0xFFFFFF).toInt() << 0)
-          .withOpacity(1.0);
-      var list = re["keypoints"].values.map<Widget>((k) {
-        return Positioned(
-          left: k["x"] * factorX - 6,
-          top: k["y"] * factorY - 6,
-          width: 100,
-          height: 12,
-          child: Text(
-            "● ${k["part"]}",
-            style: TextStyle(
-              color: color,
-              fontSize: 12.0,
-            ),
-          ),
-        );
-      }).toList();
-
-      lists..addAll(list);
-    });
-
-    return lists;
-  }
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     List<Widget> stackChildren = [];
 
     stackChildren.add(Positioned(
-        top: 0.0,
-        left: 0.0,
-        width: size.width,
-        child: _image == null ? Text('No image selected.') : Image.file(_image),
-      ));
-    
+      top: 0.0,
+      left: 0.0,
+      width: size.width,
+      child: _image == null ? Text('No image selected.') : Image.file(_image),
+    ));
 
-    stackChildren.addAll(renderBoxes(size));
     if (_busy) {
       stackChildren.add(const Opacity(
         child: ModalBarrier(dismissible: false, color: Colors.grey),
@@ -234,12 +152,14 @@ class _StaticImagePreviewerState extends State<StaticImagePreviewer> {
       stackChildren.add(const Center(child: CircularProgressIndicator()));
     }
 
+    stackChildren.addAll(renderBoxes(size));
+
     return Scaffold(
       body: Stack(
         children: stackChildren,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: predictImagePicker,
+        onPressed: imagePickerOptions,
         tooltip: 'Pick Image',
         child: Icon(Icons.image),
       ),

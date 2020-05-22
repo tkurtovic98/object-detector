@@ -24,7 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-
+  camera: ^0.5.8+1
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
@@ -48,6 +48,8 @@ flutter:
   assets:
     - assets/yolov2_tiny.txt
     - assets/yolov2_tiny.tflite
+    - assets/ssd-tflite-model.tflite
+    - assets/pet_label_list.txt
 
   # To add assets to your application, add an assets section, like this:
   # assets:
