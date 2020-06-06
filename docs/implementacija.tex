@@ -49,7 +49,6 @@ Ovakva arhitektura modela daje rezultate brže i točnije od YOLO modela. Istodo
 sporijih arhitektura koje koriste tehniku pretpostavljenih regija, poput Brzog R-CNN. \citep{DBLP:journals/corr/LiuAESR15}
 
 Ograničenost vlastitih računalnih i vremenskih resursa zahtijeva preuzimanje treniranog modela koji ima postavljene parametre i arhitekturu te treniranje modela korištenjem tehnike tranzitivnog učenja.
-Slika \ref{TF-model} prikazuje graf korištenog modela.
 Na službenom github repozitoriju\footnote{\url{https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md}}
 postoje mnogi različiti modeli koji se mogu koristiti za tranzitivno učenje. Ovaj model \footnote{\url{http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_0.75_depth_quantized_300x300_coco14_sync_2018_07_18.tar.gz}}
 izabran je zbog kompatibilnosti izvođenja na TPU, što omogućuje brže treniranje. Nakon preuzimanja modela kontrolne točke bile su kopirane u isti direktorij gdje se nalaze i datoteke koje služe za treniranje. 
@@ -135,7 +134,7 @@ na GPU jer trenutno ne postoji mogućnost validacije na TPU. Kod koji pokreće p
 \end{lstlisting}
 
 Za validaciju nije potrebno promijeniti sve zastavice, već samo one koje određuju da se koristi GPU, a ne TPU. Validacija se izvršava paralelno s treniranjem i postupak također traje dva sata.
-Prilikom validacije treniranog modela računa se mAP vrijednost, koja je objašnjena na početku ovog rada. 
+Prilikom validacije treniranog modela računa se mAP vrijednost za sve razrede iz skupa podataka i IoU koji su veći od 75\%. \newline
 
 \begin{figure}[htb]
     \centering
@@ -147,30 +146,6 @@ Prilikom validacije treniranog modela računa se mAP vrijednost, koja je objašn
 
 Iz grafa na slici \ref{Eval-mAP} vidljivo je da je preciznost bila to veća što je model bio istreniraniji, što je u skladu s očekivanjima. 
 
-% \begin{figure}[htb]
-%     \begin{subfigure}{.4\textwidth}
-%         \centering
-%         \includegraphics[width=.8\linewidth]{img/Cat-eval.png}
-%         \caption{Detekcija nakon 5700 koraka. Pogrešan razred}
-%         \label{Eval-cat}
-%     \end{subfigure}
-%     \begin{subfigure}{.4\textwidth}
-%         \centering
-%         \includegraphics[width=.8\linewidth]{img/Cat-eval2.png}
-%         \caption{Detekcija nakon 18500 koraka. Pogrešan razred}
-%         \label{Eval-cat}
-%     \end{subfigure}
-%     \begin{subfigure}{.4\textwidth}
-%         \centering
-%         \includegraphics[width=.8\linewidth]{img/Cat-eval3.png}
-%         \caption{Detekcija nakon 31300 koraka. Točan razred}
-%         \label{Eval-cat}
-%     \end{subfigure}
-% \caption{Detekcija razreda tokom evaluacije u kojoj nakon 30000 koraka dolazi do točne klasifikacije}
-% \label{fig:CAT_Eval}
-% \end{figure}
-
-
 \section{Mobilna aplikacija}
 Nakon što završi treniranje i validacija modela, potrebno je pretvoriti model u format prikladan za mobilne uređaje, drugim riječima u tensorflow lite format. \newline Kako bi se to ostvarilo potrebno je 
 zamrznuti parametre trenutnog modela čime se dobiva zamrznuti graf \engl{frozen graph}. Kao i do sada, pretvorba se odvija pomoću skripte u kojoj se navode potrebne putanje i poziva 
@@ -178,7 +153,7 @@ metoda tensorflow sučelja. Ovaj postupak odvija se unutar virtualnog okruženja
 je stvoriti novi flutter projekt. Kao razvojno okruženje koristi se Visual Studio Code, unutar kojega se instaliraju potrebne ekstenzije za Dart i Flutter. 
 
 Unutar samog projekta potrebno je dodati ovisnost \engl{dependency} o tflite paketu. Također je unutar assets direktorija potrebno dodati datoteku s labelama i sam model. 
-Prvo je potrebno postaviti izgled zaslona prema korisničkim zahtjevima. Slika \ref{Flutter-main} prikazuje odsječak koda koji stvara glavnu stranicu, a slika \ref{Flutter-main-impl} prikazuje glavnu stranicu.
+Prvo je potrebno postaviti izgled zaslona prema korisničkim zahtjevima. Slika \ref{Flutter-main} prikazuje odsječak koda koji stvara glavnu stranicu.
 
 
 \begin{figure}[htb]
@@ -188,15 +163,7 @@ Prvo je potrebno postaviti izgled zaslona prema korisničkim zahtjevima. Slika \
     \label{Flutter-main}
 \end{figure}
 
-
-\begin{figure}[htb]
-    \centering
-    \includegraphics[height=10cm]{img/flutter-main-impl.png}
-    \caption{Izgled glavne stranice}
-    \label{Flutter-main-impl}
-\end{figure}
-
-Aplikacija je podijeljenja u dva područja: prvo služi za detekciju objekata na statičkim slikama, dok drugo služi za detekciju objekata unutar videozapisa. Kod za ta dva područja nalazi se unutar repozitorija na githubu \footnote{}.
+Aplikacija je podijeljenja u dva područja: prvo služi za detekciju objekata na statičkim slikama, dok drugo služi za detekciju objekata unutar videozapisa. Kod za ta dva područja nalazi se unutar repozitorija na githubu \footnote{\url{https://github.com/tkurtovic98/object-detector}}.\newline
 Detektiranje objekata na statičkim slikama vrlo je precizno. U stvarnom vremenu vidljivo je nastupanje kašnjenja i preciznost ovisi o tome 
 kako je objekt, u ovome slučaju pas ili mačka, postavljen tijekom snimanja (Osvjetljenje, kut snimanja itd.). U nastavku se mogu vidjeti primjeri statičkoga i dinamičkoga detektiranja. Na slici \ref{Flutter-render-boxes} vidljiv je odsječak koda koji
 unutar statičkog okruženja prikazuje rezultat na slici.
@@ -209,8 +176,11 @@ unutar statičkog okruženja prikazuje rezultat na slici.
 \end{figure}
 
 \section{Testiranje aplikacije}
-U završnom djelu razvoja potrebno je testirati razvijenu aplikaciju. Pritom se nije testirala točnost nad svim razredima, nego ispravnost implementacije treniranog modela.
-Neke su fotografije preuzete s interneta, dok su druge fotografirane vlastitim uređajem. Primjeri su vidljivi na slici \ref{fig:CAT_Eval}
+U završnom djelu razvoja potrebno je testirati zadovoljava li razvijena aplikacija zahtjeve koji su izneseni na početku ovog rada. Aplikacija nudi odabir 
+detektiranja na statičkim slikama ili videozapisu u stvarnom vremenu. Model se dohvaća lokalno i nema potrebe za internetskom vezom. Razlog je postavljanje modela 
+u direktorij same aplikacije.
+Na slici \ref{fig:CAT_Eval} su vidljive snimke zaslona prilikom korištenja aplikacije. 
+Prva i treća snimka zaslona prikazuje aplikaciju prilikom detektiranja statičkih fotografija preuzetih s interneta, dok druga prikazuje rad aplikacije pri detektiranju u stvarnom vremenu snimljeno vlastitim uređajem.
 
 
 \begin{figure}[htb]

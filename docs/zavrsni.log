@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.13)  6 JUN 2020 02:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.13)  6 JUN 2020 03:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/zavrsni.tex
-(/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/zavrsni.tex
+**/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zavrsni.tex
+(/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zavrsni.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 29 language(s) loaded.
-(/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/fer.cls
+(/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/fer.cls
 Document Class: fer 
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
@@ -650,7 +650,7 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
 Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
 \c@subfigure=\count130
 \c@subtable=\count131
-) (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/zavrsni.aux (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Uvod.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Pojmovi.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Metode.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/zahtjevi.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/implementacija.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Zakljucak.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Sazetak.aux))
+) (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zavrsni.aux (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Uvod.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Pojmovi.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Metode.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zahtjevi.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/implementacija.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Zakljucak.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Sazetak.aux))
 \openout1 = `zavrsni.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -746,7 +746,7 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
 LaTeX Info: Redefining \nameref on input line 8.
- (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/zavrsni.out) (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/zavrsni.out)
+ (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zavrsni.out) (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zavrsni.out)
 \@outlinefile=\write3
 \openout3 = `zavrsni.out'.
 
@@ -780,7 +780,7 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 <to be read again> 
                    \relax 
 l.23 \zahvala{}
-                [1] [3] (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/zavrsni.toc
+                [1] [3] (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zavrsni.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
  [4
@@ -792,7 +792,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
  [5]
 \openout2 = `Uvod.aux'.
 
- (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Uvod.tex
+ (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Uvod.tex
 Poglavlje 1.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
@@ -807,7 +807,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 ] [2]
 \openout2 = `Pojmovi.aux'.
 
- (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Pojmovi.tex
+ (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Pojmovi.tex
 Poglavlje 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 17--21
@@ -825,10 +825,10 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
 
 
 
-] [4 </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/iou_equation.png>]
+] [4 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/iou_equation.png>]
 \openout2 = `Metode.aux'.
 
- (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Metode.tex
+ (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Metode.tex
 Poglavlje 3.
 
 Overfull \hbox (6.67012pt too wide) in paragraph at lines 11--12
@@ -844,7 +844,7 @@ Package pdftex.def Info: img/R-CNN.png  used on input line 18.
 
 
 
- </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/R-CNN.png>]
+ </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/R-CNN.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 39--44
 
  []
@@ -854,13 +854,13 @@ File: img/Fast-RCNN.png Graphic file (type png)
 <use img/Fast-RCNN.png>
 Package pdftex.def Info: img/Fast-RCNN.png  used on input line 55.
 (pdftex.def)             Requested size: 284.52756pt x 107.59145pt.
-[6 </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/Fast-RCNN.png>]
+[6 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/Fast-RCNN.png>]
 <img/Faster-RCNN.png, id=269, 426.59375pt x 406.51875pt>
 File: img/Faster-RCNN.png Graphic file (type png)
 <use img/Faster-RCNN.png>
 Package pdftex.def Info: img/Faster-RCNN.png  used on input line 78.
 (pdftex.def)             Requested size: 284.52756pt x 271.15656pt.
- [7 </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/Faster-RCNN.png>]
+ [7 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/Faster-RCNN.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 100--106
 
  []
@@ -871,7 +871,7 @@ File: img/YOLO-process.png Graphic file (type png)
 <use img/YOLO-process.png>
 Package pdftex.def Info: img/YOLO-process.png  used on input line 125.
 (pdftex.def)             Requested size: 341.43306pt x 221.50676pt.
- [9 </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/YOLO-process.png>]
+ [9 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/YOLO-process.png>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 149.
 
@@ -887,10 +887,10 @@ Package pdftex.def Info: img/SSD.png  used on input line 169.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [10] [11 </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/SSD.png>]
+) [10] [11 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/SSD.png>]
 \openout2 = `zahtjevi.aux'.
 
- (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/zahtjevi.tex
+ (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zahtjevi.tex
 Poglavlje 4.
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
@@ -904,7 +904,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 ] [13]) [14]
 \openout2 = `implementacija.aux'.
 
- (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/implementacija.tex
+ (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/implementacija.tex
 Poglavlje 5.
 [15
 
@@ -927,92 +927,88 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 37.
 
-[16 </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/pet_labels.png> </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/Gsutil.png>]
-
-LaTeX Warning: Reference `TF-model' on page 17 undefined on input line 52.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--53
+[16 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/pet_labels.png> </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/Gsutil.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
 [][][][]$\T1/pcr/m/n/10 https : / / github . com / tensorflow / models / blob / master / research / object _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 [][][][]$\T1/pcr/m/n/10 http : / / download . tensorflow . org / models / object _ detection / ssd _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 \T1/pcr/m/n/10 mobilenet _ v1 _ 0 . 75 _ depth _ quantized _ 300x300 _ coco14 _ sync _ 2018 _ 07 _ 18 .
  []
 
 <img/pipeline.png, id=384, 793.96625pt x 705.63625pt>
 File: img/pipeline.png Graphic file (type png)
 <use img/pipeline.png>
-Package pdftex.def Info: img/pipeline.png  used on input line 62.
+Package pdftex.def Info: img/pipeline.png  used on input line 61.
 (pdftex.def)             Requested size: 284.52756pt x 252.87677pt.
 [17] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [18 </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/pipeline.png>]
-<img/class-loss.png, id=411, 973.6375pt x 437.635pt>
+) [18 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/pipeline.png>]
+<img/class-loss.png, id=414, 973.6375pt x 437.635pt>
 File: img/class-loss.png Graphic file (type png)
 <use img/class-loss.png>
-Package pdftex.def Info: img/class-loss.png  used on input line 100.
+Package pdftex.def Info: img/class-loss.png  used on input line 99.
 (pdftex.def)             Requested size: 341.43306pt x 153.46835pt.
- [19 </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/class-loss.png>]
-<img/local-loss.png, id=425, 832.10875pt x 437.635pt>
+<img/local-loss.png, id=416, 832.10875pt x 437.635pt>
 File: img/local-loss.png Graphic file (type png)
 <use img/local-loss.png>
-Package pdftex.def Info: img/local-loss.png  used on input line 114.
+Package pdftex.def Info: img/local-loss.png  used on input line 113.
 (pdftex.def)             Requested size: 341.43306pt x 179.57173pt.
- [20 </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/local-loss.png>]
-<img/eval-mAP.png, id=446, 1249.66875pt x 447.6725pt>
+ [19 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/class-loss.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
+
+ []
+
+<img/eval-mAP.png, id=428, 1249.66875pt x 447.6725pt>
 File: img/eval-mAP.png Graphic file (type png)
 <use img/eval-mAP.png>
-Package pdftex.def Info: img/eval-mAP.png  used on input line 142.
+Package pdftex.def Info: img/eval-mAP.png  used on input line 141.
 (pdftex.def)             Requested size: 398.33858pt x 142.69798pt.
-<img/flutter-main.png, id=450, 834.11626pt x 332.24126pt>
+[20 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/local-loss.png>]
+<img/flutter-main.png, id=449, 834.11626pt x 332.24126pt>
 File: img/flutter-main.png Graphic file (type png)
 <use img/flutter-main.png>
-Package pdftex.def Info: img/flutter-main.png  used on input line 186.
+Package pdftex.def Info: img/flutter-main.png  used on input line 161.
 (pdftex.def)             Requested size: 398.33858pt x 158.66792pt.
-<img/flutter-main-impl.png, id=451, 1084.05pt x 1927.2pt>
-File: img/flutter-main-impl.png Graphic file (type png)
-<use img/flutter-main-impl.png>
-Package pdftex.def Info: img/flutter-main-impl.png  used on input line 194.
-(pdftex.def)             Requested size: 160.03659pt x 284.52756pt.
- [21 </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/eval-mAP.png>]
-<img/Flutter-render-boxes.png, id=462, 835.12pt x 600.2425pt>
+ [21 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/eval-mAP.png>]
+<img/Flutter-render-boxes.png, id=461, 835.12pt x 600.2425pt>
 File: img/Flutter-render-boxes.png Graphic file (type png)
 <use img/Flutter-render-boxes.png>
-Package pdftex.def Info: img/Flutter-render-boxes.png  used on input line 206.
+Package pdftex.def Info: img/Flutter-render-boxes.png  used on input line 173.
 (pdftex.def)             Requested size: 398.33858pt x 286.3088pt.
-<img/app-test-yorkie.jpeg, id=464, 722.7pt x 1445.4pt>
+ [22 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/flutter-main.png> </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/Flutter-render-boxes.png>]
+<img/app-test-yorkie.jpeg, id=470, 722.7pt x 1445.4pt>
 File: img/app-test-yorkie.jpeg Graphic file (type jpg)
 <use img/app-test-yorkie.jpeg>
-Package pdftex.def Info: img/app-test-yorkie.jpeg  used on input line 219.
+Package pdftex.def Info: img/app-test-yorkie.jpeg  used on input line 189.
 (pdftex.def)             Requested size: 113.80379pt x 227.62204pt.
-<img/app-test-beagle.jpeg, id=465, 722.7pt x 1445.4pt>
+<img/app-test-beagle.jpeg, id=471, 722.7pt x 1445.4pt>
 File: img/app-test-beagle.jpeg Graphic file (type jpg)
 <use img/app-test-beagle.jpeg>
-Package pdftex.def Info: img/app-test-beagle.jpeg  used on input line 225.
+Package pdftex.def Info: img/app-test-beagle.jpeg  used on input line 195.
 (pdftex.def)             Requested size: 113.80379pt x 227.62204pt.
 
-Underfull \hbox (badness 1496) in paragraph at lines 226--226
+Underfull \hbox (badness 1496) in paragraph at lines 196--196
 []\T1/ptm/b/n/10.95 (b) |\T1/ptm/m/n/10.95 Pri-mjer de-tek-ti-ra-nja u
  []
 
-<img/app-test-spinx.jpeg, id=466, 722.7pt x 1445.4pt>
+<img/app-test-spinx.jpeg, id=472, 722.7pt x 1445.4pt>
 File: img/app-test-spinx.jpeg Graphic file (type jpg)
 <use img/app-test-spinx.jpeg>
-Package pdftex.def Info: img/app-test-spinx.jpeg  used on input line 231.
+Package pdftex.def Info: img/app-test-spinx.jpeg  used on input line 201.
 (pdftex.def)             Requested size: 113.80379pt x 227.62204pt.
-) [22 </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/flutter-main.png>] [23 </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/flutter-main-impl.png> </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/Flutter-render-boxes.png>] [24 </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/app-test-yorkie.jpeg> </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/app-test-beagle.jpeg> </home/tomislav/Tomo/Faks/Zavrsni-rad/docs/img/app-test-spinx.jpeg>]
+) [23 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/app-test-yorkie.jpeg> </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/app-test-beagle.jpeg> </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/app-test-spinx.jpeg>]
 \openout2 = `Zakljucak.aux'.
 
- (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Zakljucak.tex
+ (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Zakljucak.tex
 Poglavlje 6.
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
@@ -1024,11 +1020,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--32
 
  []
 
-[25
+[24
 
 
 
-] (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/zavrsni.bbl
+] (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zavrsni.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 29--35
 []\T1/ptm/m/n/12 Jason Brow-nlee.  A Gen-tle In-tro-duc-tion to Object Re-cog-ni-tion With
  []
@@ -1048,41 +1044,37 @@ Underfull \hbox (badness 1019) in paragraph at lines 67--70
 []\T1/ptm/m/n/12 Joseph Red-mon i Ali Far-hadi.  YOLO9000: bet-ter, fas-ter, stron-ger.  \T1/ptm/m/it/12 CoRR\T1/ptm/m/n/12 ,
  []
 
-[26
+[25
 
 
-]) [27]
+]) [26]
 \openout2 = `Sazetak.aux'.
 
- (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Sazetak.tex) [28
+ (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Sazetak.tex) [27
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 40.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 40.
- (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/zavrsni.aux (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Uvod.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Pojmovi.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Metode.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/zahtjevi.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/implementacija.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Zakljucak.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/docs/Sazetak.aux))
+ (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zavrsni.aux (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Uvod.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Pojmovi.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Metode.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zahtjevi.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/implementacija.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Zakljucak.aux) (/home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/Sazetak.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 40.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 40.
 Package rerunfilecheck Info: File `zavrsni.out' has not changed.
-(rerunfilecheck)             Checksum: 638EE71DD3EE39FDBD9857CCE7960A2E;1949.
-
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: AD1CD47CA3EEEE07459C8E7A5659CC41;1949.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 40.
  ) 
 Here is how much of TeX's memory you used:
- 11565 strings out of 494340
- 167199 string characters out of 6164409
- 278470 words of memory out of 5000000
- 14519 multiletter control sequences out of 15000+600000
+ 11556 strings out of 494340
+ 167921 string characters out of 6164409
+ 279053 words of memory out of 5000000
+ 14513 multiletter control sequences out of 15000+600000
  73382 words of font info for 93 fonts, out of 8000000 for 9000
  350 hyphenation exceptions out of 8191
- 43i,8n,53p,916b,1928s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,8n,53p,931b,1928s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/tomislav/Tomo/Faks/Zavrsni-rad/docs/zavrsni.pdf (33 pages, 1522346 bytes).
+Output written on /home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zavrsni.pdf (32 pages, 1475442 bytes).
 PDF statistics:
- 593 PDF objects out of 1000 (max. 8388607)
- 495 compressed objects within 5 object streams
- 138 named destinations out of 1000 (max. 500000)
- 347 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 586 PDF objects out of 1000 (max. 8388607)
+ 491 compressed objects within 5 object streams
+ 136 named destinations out of 1000 (max. 500000)
+ 342 words of extra memory for PDF output out of 10000 (max. 10000000)
 
