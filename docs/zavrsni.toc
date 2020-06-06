@@ -14,24 +14,24 @@
 \contentsline {subsection}{\numberline {3.2.1}YOLO}{8}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}YOLOv2}{10}{subsection.3.2.2}
 \contentsline {section}{\numberline {3.3}SSD}{10}{section.3.3}
-\contentsline {chapter}{\numberline {4}Zahtjevi aplikacije i kori\IeC {\v s}tene tehnologije}{12}{chapter.4}
-\contentsline {section}{\numberline {4.1}Zahtjevi}{12}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Korisni\IeC {\v c}ki zahtjevi}{12}{subsection.4.1.1}
-\contentsline {subsubsection}{Omogu\IeC {\'c}en odabir na\IeC {\v c}ina detektiranja objekata}{12}{section*.8}
-\contentsline {subsubsection}{Prikaz rezultata na zaslonu}{12}{section*.9}
-\contentsline {section}{\numberline {4.2}Funckionalni zahtjevi}{13}{section.4.2}
-\contentsline {subsubsection}{U\IeC {\v c}itavanje sadr\IeC {\v z}aja}{13}{section*.10}
-\contentsline {subsubsection}{U\IeC {\v c}itavanje modela}{13}{section*.11}
-\contentsline {section}{\numberline {4.3}Tehnologije}{13}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Tensorflow}{13}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Flutter}{14}{subsection.4.3.2}
-\contentsline {chapter}{\numberline {5}Implementacija i rezultati}{15}{chapter.5}
-\contentsline {section}{\numberline {5.1}Izgled skupa podataka i pohrana}{15}{section.5.1}
-\contentsline {section}{\numberline {5.2}Su\IeC {\v c}elja i alati}{16}{section.5.2}
-\contentsline {section}{\numberline {5.3}SSD Mobilenet}{17}{section.5.3}
-\contentsline {section}{\numberline {5.4}Treniranje}{17}{section.5.4}
-\contentsline {section}{\numberline {5.5}Validacija}{20}{section.5.5}
-\contentsline {section}{\numberline {5.6}Mobilna aplikacija}{21}{section.5.6}
-\contentsline {section}{\numberline {5.7}Testiranje aplikacije}{23}{section.5.7}
-\contentsline {chapter}{\numberline {6}Zaklju\IeC {\v c}ak}{24}{chapter.6}
-\contentsline {chapter}{Literatura}{25}{chapter*.21}
+\contentsline {chapter}{\numberline {4}Zahtjevi aplikacije i kori\IeC {\v s}tene tehnologije}{13}{chapter.4}
+\contentsline {section}{\numberline {4.1}Zahtjevi}{13}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Korisni\IeC {\v c}ki zahtjevi}{13}{subsection.4.1.1}
+\contentsline {subsubsection}{Omogu\IeC {\'c}en odabir na\IeC {\v c}ina detektiranja objekata}{13}{section*.9}
+\contentsline {subsubsection}{Prikaz rezultata na zaslonu}{13}{section*.10}
+\contentsline {section}{\numberline {4.2}Funckionalni zahtjevi}{14}{section.4.2}
+\contentsline {subsubsection}{U\IeC {\v c}itavanje sadr\IeC {\v z}aja}{14}{section*.11}
+\contentsline {subsubsection}{U\IeC {\v c}itavanje modela}{14}{section*.12}
+\contentsline {section}{\numberline {4.3}Tehnologije}{14}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Tensorflow}{14}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Flutter}{15}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Implementacija i rezultati}{16}{chapter.5}
+\contentsline {section}{\numberline {5.1}Izgled skupa podataka i pohrana}{16}{section.5.1}
+\contentsline {section}{\numberline {5.2}Su\IeC {\v c}elja i alati}{17}{section.5.2}
+\contentsline {section}{\numberline {5.3}SSD Mobilenet}{18}{section.5.3}
+\contentsline {section}{\numberline {5.4}Treniranje}{18}{section.5.4}
+\contentsline {section}{\numberline {5.5}Validacija}{21}{section.5.5}
+\contentsline {section}{\numberline {5.6}Mobilna aplikacija}{22}{section.5.6}
+\contentsline {section}{\numberline {5.7}Testiranje aplikacije}{24}{section.5.7}
+\contentsline {chapter}{\numberline {6}Zaklju\IeC {\v c}ak}{25}{chapter.6}
+\contentsline {chapter}{Literatura}{26}{chapter*.22}

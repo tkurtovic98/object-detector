@@ -280,12 +280,15 @@ INPUT /home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/YOLO-process.
 INPUT /home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/YOLO-process.png
 INPUT /home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/YOLO-process.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmbi8t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmbi8t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmbi8r.tfm
+INPUT /home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/SSD-okviri.png
+INPUT /home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/SSD-okviri.png
+INPUT /home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/SSD-okviri.png
 INPUT /home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/SSD.png
 INPUT /home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/SSD.png
 INPUT /home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/SSD.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8t.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmbi8t.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmbi8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmri8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 OUTPUT /home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zahtjevi.aux

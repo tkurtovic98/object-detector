@@ -161,7 +161,35 @@ detektirati 9000 vrsta objekata u stvarnom vremenu. \citep{DBLP:journals/corr/Re
 
 
 \section{SSD}
-%Tu treba sve objasnit
+SSD ili "Single Shot Detector" nastoji dodatno smanjiti kašnjenja i povećati preciznost prilikom detektiranja. 
+Ovaj model koristi VGG16 kako bi ekstrahirao značajke sa slike. VGG16 predstavlja konvolucijsku neuronsku mrežu. 
+Značajke slike šalju idućem sloju koji započinje postupak detektiranja. Prvi sloj u postupku detektiranja objekata
+na slici služi ekstrahiranju značajki s manjih objekata na slici i dimenzija je 38x38. Broj 38x38 predstavlja broj kvadrata na koje je slika 
+podijeljena. Ovaj sloj uzima informacije kao što su rubovi i boje. Informacije iz ovog sloja ne daju dovoljno informacija za klasifikaciju. Dimenzije naknadnih slojeva 
+sve su manje (na primjer 8x8 i 4x4) i one služe detektiranju većih objekata na slici. 
+Svaki kvadrat generira četiri pretpostavke. Svaka pretpostavke sastoji se od okvira oko pretpostavljenog objekta 
+i (C + 1)  vjerojatnosti pojavljivanja razreda unutar okvira, a C je broj razreda u razrednom skupu. Broj 1 predstavlja oznaku
+kada ne postoji objekt unutar generiranog okvira. Razred s najvećom vjerojatnošću uzima se kao pretpostavljeni razred 
+za taj okvir. Na slici \ref{SSD okvir} je prikazan primjer generiranja okvira. Slika je preuzeta s \footnote{\url{https://cutt.ly/0yB2Odq}}
+
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=10cm]{img/SSD-okviri.png}
+    \caption{Lijevo na slici nalazi se originalna fotografija. Na desnoj slici vidi se generiranje okvira oko pretpostavljenog objekta za kvadrat koji se 
+    nalazi u 5 retku i 4 stupcu 8x8 mreže. Treba napomenuti da se ovaj postupak izvodi u prvom sloju koji je dimenzija 38x38, a da je zbog jednostavnosti 
+    ova mreža prikazana kao 8x8. U slojevima s manjim dimenzijama se generira 6 pretpostavki}
+    \label{SSD okvir}
+\end{figure}
+
+Uz generirane okvire, svaki kvadrat generira i unaprijed definirane okvire. Ovi okviri su ručno izrađeni na temelju širokog spektra objekata iz stvarnog svijeta.
+U početnim slojevima s većim dimenzijama generiraju se četiri takva okvira, a u kasnijim šest. Generiranje ovih okvira smanjuje količinu računanja na početku treniranja. 
+Unaprijed definirani okviri koji imaju IoU s okvirom temeljne istine većim od 0.5 označuju se kao pozitivni, dok oni koji imaju IoU manji od te vrijednosti se označuju kao negativni.
+Pozivitno označeni unaprijed definirani okviri se kombiniraju s generiranim okvirima oko pretpostavljenog objekta tako da se računa odstupanje koordinata generiranih okvira od pozitivno
+označenih. Generirani okviri koji imaju najmanje otsupanje, tj. koji najbolje odgovaraju obliku objekta koji detektiraju, uzimaju se. Ostali okviri se odbacuju. 
+
+
+
 
 
 \begin{figure}[h!]
