@@ -45,15 +45,14 @@ Veoma je bitno na početku ispravno konfigurirati sve potrebne direktorije i su�
 Model koji se koristi za implementaciju metode detekcije objekata je SSD MobileNet.
 Razlog odabira ovog modela mogućnost je treniranja pomoću tranzitivnog učenja na Googleovom oblaku, što je detaljnije pojašnjeno u nastavku.
 SSD MobileNet inačica je SSD-a prilagođena za izvođenje na mobilnim uređajima.
-Ovakva arhitektura modela daje rezultate brže i točnije od YOLO modela. Istodobno je točnija od 
-sporijih arhitektura koje koriste tehniku pretpostavljenih regija, poput Brzog R-CNN. \citep{DBLP:journals/corr/LiuAESR15}
 
 Ograničenost vlastitih računalnih i vremenskih resursa zahtijeva preuzimanje treniranog modela koji ima postavljene parametre i arhitekturu te treniranje modela korištenjem tehnike tranzitivnog učenja.
 Na službenom github repozitoriju\footnote{\url{https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md}}
 postoje mnogi različiti modeli koji se mogu koristiti za tranzitivno učenje. Ovaj model \footnote{\url{http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_0.75_depth_quantized_300x300_coco14_sync_2018_07_18.tar.gz}}
-izabran je zbog kompatibilnosti izvođenja na TPU, što omogućuje brže treniranje. Nakon preuzimanja modela kontrolne točke bile su kopirane u isti direktorij gdje se nalaze i datoteke koje služe za treniranje. 
+izabran je zbog kompatibilnosti izvođenja na TPU, što omogućuje brže treniranje. Nakon preuzimanja modela kontrolne točke bile su kopirane u isti direktorij gdje se nalaze i datoteke koje služe za treniranje.
+Kontrolna točka je datoteka u kojoj se nalaze informacije o unaprijed definiranim parametrima modela. 
 Kako se koristi unaprijed trenirani model s konfiguriranom arhitekturom i parametrima potrebno je, osim postavljanja kontrolnih točaka, postaviti konfiguracijsku datoteku u kojoj se zapisuju podaci bitni za daljnje treniranje i
-validaciju istreniranog modela. Kontrolna točka je datoteka u kojoj se nalaze informacije o unaprijed defniranim parametrima modela. U konfiguracijskoj datoteci postavljaju se vrijednosti poput broja razreda, broja kontrolnih primjeraka i funkcije za računanje stope učenja. 
+validaciju istreniranog modela. U konfiguracijskoj datoteci postavljaju se vrijednosti poput broja razreda, broja kontrolnih primjeraka i funkcije za računanje stope učenja. 
 Odsječak iz ove datoteke vidljiv je na slici \ref{Pipeline}.
 
 \begin{figure}[htb]
@@ -111,7 +110,8 @@ Postupak treniranja unutar Googleovog oblaka trajao je nešto manje od dva sata,
 \begin{figure}[htb]
     \centering
     \includegraphics[width=12cm]{img/local-loss.png}
-    \caption{Lokalizacijski gubitak tokom treniranja. X os predstavlja broj koraka ili iteracija. Y os predstavlja }
+    \caption{Lokalizacijski gubitak tokom treniranja. X os predstavlja broj koraka ili iteracija. Y os predstavlja vrijednost lokalizacijskog gubitka, koji 
+    se računa kao suma smooth L1 vrijednosti odstupanja generiranih okvira od okvira temeljne istine za sve razrede}
     \label{Local-Loss}
 \end{figure}
 
