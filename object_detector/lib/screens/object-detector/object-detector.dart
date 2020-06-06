@@ -61,3 +61,4 @@ class _ObjectDetectorState extends State<ObjectDetector> {
         onTap: _onItemTapped,
       );
 }
+

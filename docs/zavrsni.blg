@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: zavrsni.aux
+A level-1 auxiliary file: Uvod.aux
+A level-1 auxiliary file: Pojmovi.aux
+A level-1 auxiliary file: Metode.aux
+A level-1 auxiliary file: zahtjevi.aux
+A level-1 auxiliary file: implementacija.aux
+A level-1 auxiliary file: Zakljucak.aux
+The style file: fer.bst
+A level-1 auxiliary file: Sazetak.aux
+Database file #1: literatura.bib
+You've used 10 entries,
+            2773 wiz_defined-function locations,
+            666 strings with 7733 characters,
+and the built_in function-call counts, 6251 in all, are:
+= -- 492
+> -- 636
+< -- 4
++ -- 214
+- -- 204
+* -- 576
+:= -- 1057
+add.period$ -- 40
+call.type$ -- 10
+change.case$ -- 97
+chr.to.int$ -- 10
+cite$ -- 20
+duplicate$ -- 190
+empty$ -- 323
+format.name$ -- 216
+if$ -- 1230
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 9
+newline$ -- 67
+num.names$ -- 40
+pop$ -- 185
+preamble$ -- 1
+purify$ -- 88
+quote$ -- 0
+skip$ -- 195
+stack$ -- 0
+substring$ -- 45
+swap$ -- 10
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 105
+warning$ -- 0
+while$ -- 32
+width$ -- 0
+write$ -- 153

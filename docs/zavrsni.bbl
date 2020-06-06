@@ -1,0 +1,92 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Abadi et~al.(2015)Abadi, Agarwal, Barham, Brevdo, Chen, Citro,
+  Corrado, Davis, Dean, Devin, Ghemawat, Goodfellow, Harp, Irving, Isard, Jia,
+  Jozefowicz, Kaiser, Kudlur, Levenberg, Man\'{e}, Monga, Moore, Murray, Olah,
+  Schuster, Shlens, Steiner, Sutskever, Talwar, Tucker, Vanhoucke, Vasudevan,
+  Vi\'{e}gas, Vinyals, Warden, Wattenberg, Wicke, Yu, i
+  Zheng]{tensorflow2015-whitepaper}
+Mart\'{\i}n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen,
+  Craig Citro, Greg~S. Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin,
+  Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard,
+  Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, Josh
+  Levenberg, Dandelion Man\'{e}, Rajat Monga, Sherry Moore, Derek Murray, Chris
+  Olah, Mike Schuster, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal
+  Talwar, Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Vi\'{e}gas,
+  Oriol Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, i
+  Xiaoqiang Zheng.
+\newblock {TensorFlow}: Large-scale machine learning on heterogeneous systems,
+  2015.
+\newblock URL \url{https://www.tensorflow.org/}.
+\newblock Software available from tensorflow.org.
+
+\bibitem[Brownlee(2019)]{bworld}
+Jason Brownlee.
+\newblock {A Gentle Introduction to Object Recognition With Deep Learning}.
+\newblock
+  \url{https://machinelearningmastery.com/object-recognition-with-deep-learning/},
+  2019.
+\newblock [Online; accessed 2-April-2020].
+
+\bibitem[Everingham et~al.(2010)Everingham, Van~Gool, Williams, Winn, i
+  Zisserman]{everingham2010pascal}
+Mark Everingham, Luc Van~Gool, Christopher~KI Williams, John Winn, i Andrew
+  Zisserman.
+\newblock The pascal visual object classes (voc) challenge.
+\newblock \emph{International journal of computer vision}, 88\penalty0
+  (2):\penalty0 303--338, 2010.
+
+\bibitem[Girshick(2015)]{DBLP:journals/corr/Girshick15}
+Ross~B. Girshick.
+\newblock Fast {R-CNN}.
+\newblock \emph{CoRR}, abs/1504.08083, 2015.
+\newblock URL \url{http://arxiv.org/abs/1504.08083}.
+
+\bibitem[Girshick et~al.(2013)Girshick, andTrevor Darrell, i
+  Malik]{DBLP:journals/corr/GirshickDDM13}
+Ross~B. Girshick, Jeff~Donahue andTrevor Darrell, i Jitendra Malik.
+\newblock Rich feature hierarchies for accurate object detection and semantic
+  segmentation.
+\newblock \emph{CoRR}, abs/1311.2524, 2013.
+\newblock URL \url{http://arxiv.org/abs/1311.2524}.
+
+\bibitem[Liu et~al.(2015)Liu, Anguelov, Erhan, Szegedy, Reed, Fu, i
+  Berg]{DBLP:journals/corr/LiuAESR15}
+Wei Liu, Dragomir Anguelov, Dumitru Erhan, Christian Szegedy, Scott~E. Reed,
+  Cheng{-}Yang Fu, i Alexander~C. Berg.
+\newblock {SSD:} single shot multibox detector.
+\newblock \emph{CoRR}, abs/1512.02325, 2015.
+\newblock URL \url{http://arxiv.org/abs/1512.02325}.
+
+\bibitem[Redmon i Farhadi(2016)]{DBLP:journals/corr/RedmonF16}
+Joseph Redmon i Ali Farhadi.
+\newblock {YOLO9000:} better, faster, stronger.
+\newblock \emph{CoRR}, abs/1612.08242, 2016.
+
+\bibitem[Redmon et~al.(2015)Redmon, Divvala, Girshick, i
+  Farhadi]{DBLP:journals/corr/RedmonDGF15}
+Joseph Redmon, Santosh~Kumar Divvala, Ross~B. Girshick, i Ali Farhadi.
+\newblock You only look once: Unified, real-time object detection.
+\newblock \emph{CoRR}, abs/1506.02640, 2015.
+\newblock URL \url{http://arxiv.org/abs/1506.02640}.
+
+\bibitem[Ren et~al.(2015)Ren, He, Girshick, i Sun]{DBLP:journals/corr/RenHG015}
+Shaoqing Ren, Kaiming He, Ross~B. Girshick, i Jian Sun.
+\newblock Faster {R-CNN:} towards real-time object detection with region
+  proposal networks.
+\newblock \emph{CoRR}, abs/1506.01497, 2015.
+\newblock URL \url{http://arxiv.org/abs/1506.01497}.
+
+\bibitem[Szeliski(2010)]{szeliski2010computer}
+R.~Szeliski.
+\newblock \emph{Computer Vision: Algorithms and Applications}.
+\newblock Texts in Computer Science. Springer London, 2010.
+\newblock ISBN 9781848829350.
+\newblock URL \url{https://books.google.hr/books?id=bXzAlkODwa8C}.
+
+\end{thebibliography}
