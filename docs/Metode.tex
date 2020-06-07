@@ -4,7 +4,7 @@
 \section{R-CNN modeli}
 \subsection{R-CNN} 
 R-CNN ili "Region-Based Convolutional Neural Network" smatra se jednim od prvih većih
-uspjeha u području detekcije objekata pomoću konvolucijskih neuronskih mreža.\citep{bworld}\newline
+uspjeha u području detekcije objekata pomoću konvolucijskih neuronskih mreža. \citep{bworld}\newline
 Ovaj model sastavljen je od 3 modula: 
 \begin{description}
     \item [Prijedlog regija:]generiranje regija, tj. okvira oko mogućih objekata
@@ -24,7 +24,7 @@ Model iz ulazne slike generira metodom selektivnog pretraživanja \engl{Selectiv
 i šalje ih konvolucijskoj neuronskoj mreži da ekstrahira značajke. Za ovaj postupak uzeta je mreža "AlexNet deep CNN", koja 
 šalje vektor značajki klasifikatoru.
 Ovaj je postupak jednostavan i fleksibilan, ali je veoma spor. Razlog tomu je što se za svaku regiju (može ih biti i do 2000)
-ponavlja gore navedeni postupak.\citep{DBLP:journals/corr/GirshickDDM13} \newline Slika \ref{fig:Koncept R-CNN modela} prikazuje ovaj postupak.
+ponavlja gore navedeni postupak. \citep{DBLP:journals/corr/GirshickDDM13} \newline Slika \ref{fig:Koncept R-CNN modela} prikazuje ovaj postupak.
     
 
 
@@ -132,7 +132,7 @@ Ograničenja su vidljiva prilikom detekcije manjih objekata u grupi, jer priliko
 razreda svaki kvadrat na kvadratnoj mreži može imati zapisane informacije o samo dva okvira i jednom razredu. 
 YOLO, za razliku od RCNN-a, u obzir uzima cijelu sliku prilikom generiranja pretpostavki. Time smanjuje
 stopu pogrešaka, jer ne obrađuje pozadine koje ne predstavljaju niti jedan razred. Ovaj model neće podbaciti kada se na ulazu nađe novi, dosad neviđeni 
-objekt, jer ima veliku sposobnost generalizacije.\citep{DBLP:journals/corr/RedmonDGF15}   
+objekt, jer ima veliku sposobnost generalizacije. \citep{DBLP:journals/corr/RedmonDGF15}   
 
 Jedna od glavnih značajki YOLO modela jest povezanost više zasebnih komponenti u jednu neuronsku mrežu. 
 Simultano pretpostavljanje okvira oko objekata i razreda čini ovaj model sofisticiranijim u odnosu na druge modele detekcije objekata. 
@@ -165,7 +165,7 @@ Dimenzije naknadnih slojeva sve su manje (na primjer 8x8 i 4x4) i one služe det
 Svaki kvadrat generira četiri pretpostavke za mogući objekt. Svaka pretpostavka sastoji se od okvira oko objekta 
 i C + 1 vjerojatnosti pojavljivanja razreda unutar okvira, a C je broj razreda u razrednom skupu. Broj 1 predstavlja dodatan razred
 kada ne postoji objekt unutar generiranog okvira i označen je brojem 0. Razred s najvećom vjerojatnošću uzima se kao pretpostavljeni razred 
-za taj okvir. Na slici \ref{SSD okvir} prikazan je primjer generiranja okvira. Slika je preuzeta s \footnote{\url{https://cutt.ly/0yB2Odq}}
+za taj okvir. Na slici \ref{SSD okvir} prikazan je primjer generiranja okvira. Slika je preuzeta s ove web stranice\footnote{\url{https://cutt.ly/0yB2Odq}}
 
 
 \begin{figure}[htb]
@@ -182,11 +182,11 @@ U početnim slojevima s većim dimenzijama generiraju se četiri takva okvira, a
 Generiranje ovih okvira smanjuje količinu računanja na početku treniranja.
 Unaprijed definirani okviri koji imaju IoU s okvirom temeljne istine većim od 0.5 označuju se kao pozitivni, dok oni koji imaju IoU manji od te vrijednosti se označuju kao negativni.
 Lokalizacijski gubitak računa se kao suma smooth L1 vrijednosti odstupanja pretpostavljenih okvira od okvira temeljne istine za sve pozitivno označene unaprijed definirane okvire nad svim razredima. 
-Smooth L1 funkcija definira se kao 
+Smooth L1 funkcija definira se kao, 
 \[
     smoothL1(x) = \left\{\begin{array}{lr}
         0.5x^2, & \text{ako } |x| <  1\\
         |x|- 0.5, & \text{inače } \\
         \end{array}\right\}
 \]
-i objašnjenje zašto se koristi nije u sklopu ovog rada. \citep{DBLP:journals/corr/LiuAESR15}
+a objašnjenje zašto se koristi nije u sklopu ovog rada. \citep{DBLP:journals/corr/LiuAESR15}

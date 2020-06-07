@@ -38,7 +38,7 @@ Unutar probne inačice nalaze se sve potrebne komponente za kvalitetno provođen
 Nakon konfiguracije projekta na oblaku potrebno je instalirati Tensorflow Object Detection API koji u sebi sadrži brojne skripte i konfiguracijske datoteke korištene prilikom postavljanja okruženja za treniranje i validaciju. 
 Za lakšu instalaciju paketa potrebnih za rad sučelja preuzet je upravitelj paketima anaconda. Anaconda je veoma praktičan alat koji se koristi u računarskoj znanosti i služi za jednostavnije upravljanje i implementaciju paketa. 
 Nakon instalacije alata kreirano je novo virtualno okruženje u kojem su bili naknadno preuzeti paketi. Tensorflow Object Detection API preuzet je sa službenog github repozitorija i konfiguriran pomoću skripte.
-Uz ovo sučelje instalirano je i sučelje COCO. COCO je veliki skup fotografija koji se koristi za razne zadatke poput detekcije objekata, segmentacije i drugih.\newline
+Uz ovo sučelje instalirano je i sučelje COCO. COCO je veliki skup fotografija koji se koristi za razne zadatke poput detekcije objekata, segmentacije i drugih.
 Veoma je bitno na početku ispravno konfigurirati sve potrebne direktorije i sučelja. U protivnom kasnije može doći do neželjenih poteškoća prilikom implementacije.
 
 \section{SSD Mobilenet}
@@ -92,13 +92,13 @@ Kako bi sve moglo raditi, potrebno se prvo pozicionirati u "research" direktorij
 rad. Za pokretanje postupka treniranja potrebno je postaviti direktorij u koji se spremaju rezultati treniranja. \newline Isto tako, treniranje se ne bi moglo izvršiti 
 bez određivanja paketa koji se koriste, kao niti inačice tensorflowa koja se koristi prilikom izvođenja računskih operacija. Prilikom treniranja ovog modela korištena je inačica 1.15.
 
-Za vrijeme treniranja klasifikacijski gubitak na slici \ref{Class-Loss} relativno se brzo smanjio, najvećim djelom zbog toga što se koristi unaprijed trenirani model. Nakon 20 tisuća koraka
+Za vrijeme treniranja klasifikacijski gubitak na slici \ref{Class-Loss} relativno se brzo smanjio, najvećim djelom zbog toga što se koristio unaprijed trenirani model. Nakon 20 tisuća koraka
 nema značajnijih promjena, tako da se može smanjiti broj koraka treniranja čime bi se uštedjeli računalni i vremenski resursi. Klasifikacijska pogreška bi međutim bila veća. Ovakvi kompromisi nužni su kako bi se moglo doći do što kvalitetnijeg proizvoda s najmanjim mogućim ulogom.
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=12cm]{img/class-loss.png}
-    \caption{Pogreška prilikom klasifikacije tokom treniranja. X os predstavlja broj koraka ili iteracija. Y os predstavlja 
+    \caption{Pogreška prilikom klasifikacije tijekom treniranja. X os predstavlja broj koraka ili iteracija. Y os predstavlja 
     broj primjera iz skupa fotografija za koje je određivanje razreda bilo pogrešno.}
     \label{Class-Loss}
 \end{figure}
@@ -112,7 +112,7 @@ Postupak treniranja unutar Googleovog oblaka trajao je nešto manje od dva sata,
 \begin{figure}[htb]
     \centering
     \includegraphics[width=12cm]{img/local-loss.png}
-    \caption{Lokalizacijski gubitak tokom treniranja. X os predstavlja broj koraka ili iteracija. Y os predstavlja vrijednost lokalizacijskog gubitka, koji 
+    \caption{Lokalizacijski gubitak tijekom treniranja. X os predstavlja broj koraka ili iteracija. Y os predstavlja vrijednost lokalizacijskog gubitka, koji 
     se računa kao suma smooth L1 vrijednosti odstupanja generiranih okvira od okvira temeljne istine za sve razrede}
     \label{Local-Loss}
 \end{figure}
@@ -146,9 +146,10 @@ Prilikom validacije treniranog modela računa se mAP vrijednost za sve razrede i
 \end{figure}
 
 Iz grafa na slici \ref{Eval-mAP} vidljivo je da je preciznost bila to veća što je model bio istreniraniji, što je u skladu s očekivanjima. Isto tako je potrebno uočiti 
-kako se vrijednost mAPa nakon 40 tisuća koraka nije značajno promijenila i kreće stagnirati. Broj iteracija može se smanjiti kako bi se uštedjelo na računalnim resursima.  
+kako se vrijednost mAPa nakon 40 tisuća koraka nije značajno promijenila i kreće stagnirati. Broj iteracija može se smanjiti kako bi se uštedjelo na računalnim resursima.
+Visoka mAP vrijednost znači da je model naučio precizno lokalizirati i klasificirati objekte. 
 
-Uz validaciju koja je davala rezultate tokom treniranja, potrebno je predstaviti rezutate na primjerima za testiranje. Primjeri su uzeti iz istog skupa fotografija, ali ove fotografije
+Uz validaciju koja je davala rezultate tijekom treniranja, potrebno je predstaviti rezutate na primjerima za testiranje. Primjeri su uzeti iz istog skupa fotografija, ali ove fotografije
 model do sada nije analizirao. Testiranje se provodi automatski uz pomoć samostalno napisanih skripti koje su dostupne na guthub repozitoriju \footnote{\url{https://github.com/tkurtovic98/tflite_model_testing}}.
 Skripte su napisane u Pythonu.
 
@@ -170,7 +171,7 @@ Skripte su napisane u Pythonu.
 Slike su u novom direktoriju organizirane u direktorije koji su nazvani po imenu razreda. 
 Za potrebe ovog rada, uzeta su tri nasumična razreda koji predstavljaju psa i tri nasumična razreda koji predstavljaju mačku. Nakon premještanja fotografija potrebno je pokrenuti skriptu koja će izvršiti testiranje
 klasifikacije. Postupak testiranja uspješnosti klasifikacije izvršavao se nad oko 100 fotografija za svaki razred. Da bi pretpostavka došla u obzir za određivanje uspješnosti klasifikacije morala je imati 
-vrijednost postotka sigurnosti veću od 25, 50 ili 75 posto. Grafovi za ove vrijednosti prikazani su na slikama \ref{Klasifikacija25}, \ref{Klasifikacija50} i \ref{Klasifikacija75}, respektivno.
+vrijednost postotka sigurnosti veću od 25, 50 ili 75 posto. Grafovi za ove vrijednosti prikazani su na slikama \ref{Klasifikacija25}, \ref{Klasifikacija50} i \ref{Klasifikacija75}, slijedom.
 
 \begin{figure}[htb]
     \centering

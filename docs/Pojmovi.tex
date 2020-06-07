@@ -10,7 +10,7 @@ preciznosti \engl{precission} i opoziva \engl{recall}. Preciznost je omjer uspje
 Opoziv je omjer broja uspješno klasificiranih objekata i stvarnog broja objekata traženog razreda na slici. 
 Srednja preciznost \engl{Average precision} je srednja vrijednost maksimalne preciznosti za vrijednosti opoziva između 0 i 1 s korakom 
 od 0.1. U nastavku će srednja preciznost biti označena oznakom SP. \newline 
-Formulom  $SP=\frac{1}{11}\sum_{n=0}^{10} P(R(n))$ računa se ova vrijednost. R(n) označava n-tu vrijednosti opoziva iz polja [0, 0.1, 0.2, ... , 1.0], a 
+Ova vrijednost računa se formulom  $SP=\frac{1}{11}\sum_{n=0}^{10} P(R(n))$. R(n) označava n-tu vrijednosti opoziva iz polja [0, 0.1, 0.2, ... , 1.0], a 
 P(R(n)) je vrijednost maksimalne preciznosti za R(n). \citep{everingham2010pascal}
 
 Ove vrijednosti pokazuju točnost modela prilikom klasificiranja objekata na slikama. Uz ove vrijednosti potrebno je odrediti i uspješnost modela prilikom lokalizacije, tj. 
@@ -27,6 +27,6 @@ Vizualni prikaz računanja vrijednosti IoU nalazi se na slici ~\ref{IoU}
 \end{figure}
 
 Za računanje mAPa može se uzeti jedna vrijednost IoU koja predstavlja granicu. Rezultati detektiranja kojima je IoU manji od ove vrijednosti se odbacuju.
-Ostalim rezultatima računa se SP. mAP je rezultat izračuna srednje vrijednosti SPa svih razreda. Može se također uzeti skup vrijednosti IoU koje predstavljaju granicu. 
+Ostalim rezultatima računa se SP. MAP je rezultat izračuna srednje vrijednosti SPa svih razreda. Može se također uzeti skup vrijednosti IoU koje predstavljaju granicu. 
 Skup vrijednosti može biti proizvoljan, ali se na primjer za COCO natjecanja uzima skup vrijednosti između 0.5 i 0.95 uz korak 0.05. \footnote{\url{http://cocodataset.org/\#detection-eval}}
 Što je vrijednost mAPa veća to je veća sigurnost da će model ispravno detektirati lokaciju i razred objekta. 

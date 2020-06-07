@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.13)  7 JUN 2020 14:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.13)  7 JUN 2020 22:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -969,50 +969,49 @@ Package pdftex.def Info: img/eval-mAP.png  used on input line 143.
 <img/Klasifikacija_25.png, id=442, 1453.43pt x 646.415pt>
 File: img/Klasifikacija_25.png Graphic file (type png)
 <use img/Klasifikacija_25.png>
-Package pdftex.def Info: img/Klasifikacija_25.png  used on input line 157.
+Package pdftex.def Info: img/Klasifikacija_25.png  used on input line 158.
 (pdftex.def)             Requested size: 398.33858pt x 177.15807pt.
 <img/Klasifikacija_test.png, id=443, 1641.13126pt x 546.04pt>
 File: img/Klasifikacija_test.png Graphic file (type png)
 <use img/Klasifikacija_test.png>
-Package pdftex.def Info: img/Klasifikacija_test.png  used on input line 164.
+Package pdftex.def Info: img/Klasifikacija_test.png  used on input line 165.
 (pdftex.def)             Requested size: 398.33858pt x 132.53535pt.
- [21 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/eval-mAP.png> </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/Klasifikacija_25.png>]
-<img/Klas75.png, id=456, 1645.14626pt x 629.35126pt>
+<img/Klas75.png, id=447, 1645.14626pt x 629.35126pt>
 File: img/Klas75.png Graphic file (type png)
 <use img/Klas75.png>
-Package pdftex.def Info: img/Klas75.png  used on input line 177.
+Package pdftex.def Info: img/Klas75.png  used on input line 178.
 (pdftex.def)             Requested size: 398.33858pt x 152.38222pt.
- [22 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/Klasifikacija_test.png> </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/Klas75.png>]
-<img/flutter-main.png, id=466, 834.11626pt x 332.24126pt>
+ [21 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/eval-mAP.png>] [22 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/Klasifikacija_25.png> </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/Klasifikacija_test.png>]
+<img/flutter-main.png, id=465, 834.11626pt x 332.24126pt>
 File: img/flutter-main.png Graphic file (type png)
 <use img/flutter-main.png>
-Package pdftex.def Info: img/flutter-main.png  used on input line 195.
+Package pdftex.def Info: img/flutter-main.png  used on input line 196.
 (pdftex.def)             Requested size: 398.33858pt x 158.66792pt.
-<img/Flutter-render-boxes.png, id=470, 835.12pt x 600.2425pt>
+<img/Flutter-render-boxes.png, id=469, 835.12pt x 600.2425pt>
 File: img/Flutter-render-boxes.png Graphic file (type png)
 <use img/Flutter-render-boxes.png>
-Package pdftex.def Info: img/Flutter-render-boxes.png  used on input line 207.
+Package pdftex.def Info: img/Flutter-render-boxes.png  used on input line 208.
 (pdftex.def)             Requested size: 398.33858pt x 286.3088pt.
- [23 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/flutter-main.png>]
+ [23 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/Klas75.png> </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/flutter-main.png>]
 <img/app-test-yorkie.jpeg, id=480, 722.7pt x 1445.4pt>
 File: img/app-test-yorkie.jpeg Graphic file (type jpg)
 <use img/app-test-yorkie.jpeg>
-Package pdftex.def Info: img/app-test-yorkie.jpeg  used on input line 222.
+Package pdftex.def Info: img/app-test-yorkie.jpeg  used on input line 223.
 (pdftex.def)             Requested size: 113.80379pt x 227.62204pt.
 <img/app-test-beagle.jpeg, id=481, 722.7pt x 1445.4pt>
 File: img/app-test-beagle.jpeg Graphic file (type jpg)
 <use img/app-test-beagle.jpeg>
-Package pdftex.def Info: img/app-test-beagle.jpeg  used on input line 228.
+Package pdftex.def Info: img/app-test-beagle.jpeg  used on input line 229.
 (pdftex.def)             Requested size: 113.80379pt x 227.62204pt.
 
-Underfull \hbox (badness 1496) in paragraph at lines 229--229
+Underfull \hbox (badness 1496) in paragraph at lines 230--230
 []\T1/ptm/b/n/10.95 (b) |\T1/ptm/m/n/10.95 Pri-mjer de-tek-ti-ra-nja u
  []
 
 <img/app-test-spinx.jpeg, id=482, 722.7pt x 1445.4pt>
 File: img/app-test-spinx.jpeg Graphic file (type jpg)
 <use img/app-test-spinx.jpeg>
-Package pdftex.def Info: img/app-test-spinx.jpeg  used on input line 234.
+Package pdftex.def Info: img/app-test-spinx.jpeg  used on input line 235.
 (pdftex.def)             Requested size: 113.80379pt x 227.62204pt.
 ) [24 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/Flutter-render-boxes.png>] [25 </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/app-test-yorkie.jpeg> </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/app-test-beagle.jpeg> </home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/img/app-test-spinx.jpeg>]
 \openout2 = `Zakljucak.aux'.
@@ -1074,13 +1073,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 40.
 Here is how much of TeX's memory you used:
  11578 strings out of 494340
  168423 string characters out of 6164409
- 280165 words of memory out of 5000000
+ 280169 words of memory out of 5000000
  14527 multiletter control sequences out of 15000+600000
  72178 words of font info for 92 fonts, out of 8000000 for 9000
  350 hyphenation exceptions out of 8191
  43i,9n,53p,1024b,1928s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zavrsni.pdf (34 pages, 1817861 bytes).
+Output written on /home/tomislav/Tomo/Faks/Zavrsni-rad/implementacija/docs/zavrsni.pdf (34 pages, 1817991 bytes).
 PDF statistics:
  603 PDF objects out of 1000 (max. 8388607)
  501 compressed objects within 6 object streams
