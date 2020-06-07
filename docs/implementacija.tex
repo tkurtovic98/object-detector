@@ -143,8 +143,38 @@ Prilikom validacije treniranog modela računa se mAP vrijednost za sve razrede i
     \label{Eval-mAP}
 \end{figure}
 
-
 Iz grafa na slici \ref{Eval-mAP} vidljivo je da je preciznost bila to veća što je model bio istreniraniji, što je u skladu s očekivanjima. 
+
+Uz validaciju koja je davala rezultate tokom treniranja, potrebno je predstaviti rezutate klasifikacije na primjerima za testiranje. Primjeri su uzeti iz istog skupa fotografija, ali ove fotografije
+model nije do sada analizirao. Testiranje se provodi automatski uz pomoć samostalno napisanih skripti koje su dostupne na guthub repozitoriju \footnote{\url{https://github.com/tkurtovic98/tflite_model_testing}}.
+Skripte su napisane u pythonu i služe za premještanje slika koje služe za testiranje u novi direktorij. 
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=14cm]{img/Klasifikacija_25.png}
+    \caption{Prikaz rezultata klasificiranja nad 100 testnih primjera za postotak sigurnosti od barem 25\%. }
+    \label{Klasifikacija25}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=14cm]{img/Klasifikacija_test.png}
+    \caption{Prikaz rezultata klasificiranja nad 100 testnih primjera za postotak sigurnosti od barem 50\%.}
+    \label{Klasifikacija50}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=14cm]{img/Klas75.png}
+    \caption{Prikaz rezultata klasificiranja nad 100 testnih primjera za postotak sigurnosti od barem 75\%.}
+    \label{Klasifikacija75}
+\end{figure}
+
+
+Slike su u novom direktoriju organizirane u direktorije koji su nazvani po imenu razreda. 
+Za potrebe ovog rada, uzeta su tri nasumična razreda koji predstavljaju psa i tri nasumična razreda koji predstavljaju mačku. Nakon premještanja fotografija potrebno je pokrenuti skriptu koja će izvršiti testiranje
+klasifikacije. Postupak testiranja uspješnosti klasifikacije izvršavao se nad oko 100 fotografija za svaki razred. Da bi pretpostavka došla u obzir za određivanje uspješnosti klasifikacije morala je imati 
+vrijednost postotka sigurnosti veću od 25, 50 ili 75 posto. Grafovi za ove vrijednosti prikazani su na slikama \ref{Klasifikacija25}, \ref{Klasifikacija50} i \ref{Klasifikacija75}, respektivno.
 
 \section{Mobilna aplikacija}
 Nakon što završi treniranje i validacija modela, potrebno je pretvoriti model u format prikladan za mobilne uređaje, drugim riječima u tensorflow lite format. \newline Kako bi se to ostvarilo potrebno je 

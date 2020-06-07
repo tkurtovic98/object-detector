@@ -30,7 +30,7 @@
 \contentsline {section}{\numberline {5.3}SSD Mobilenet}{17}{section.5.3}
 \contentsline {section}{\numberline {5.4}Treniranje}{17}{section.5.4}
 \contentsline {section}{\numberline {5.5}Validacija}{20}{section.5.5}
-\contentsline {section}{\numberline {5.6}Mobilna aplikacija}{21}{section.5.6}
+\contentsline {section}{\numberline {5.6}Mobilna aplikacija}{22}{section.5.6}
 \contentsline {section}{\numberline {5.7}Testiranje aplikacije}{23}{section.5.7}
-\contentsline {chapter}{\numberline {6}Zaklju\IeC {\v c}ak}{24}{chapter.6}
-\contentsline {chapter}{Literatura}{25}{chapter*.21}
+\contentsline {chapter}{\numberline {6}Zaklju\IeC {\v c}ak}{26}{chapter.6}
+\contentsline {chapter}{Literatura}{27}{chapter*.24}
