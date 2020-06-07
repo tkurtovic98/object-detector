@@ -167,12 +167,6 @@ Skripte su napisane u Pythonu.
     \label{Klasifikacija50}
 \end{figure}
 
-
-Slike su u novom direktoriju organizirane u direktorije koji su nazvani po imenu razreda. 
-Za potrebe ovog rada, uzeta su tri nasumična razreda koji predstavljaju psa i tri nasumična razreda koji predstavljaju mačku. Nakon premještanja fotografija potrebno je pokrenuti skriptu koja će izvršiti testiranje
-klasifikacije. Postupak testiranja uspješnosti klasifikacije izvršavao se nad oko 100 fotografija za svaki razred. Da bi pretpostavka došla u obzir za određivanje uspješnosti klasifikacije morala je imati 
-vrijednost postotka sigurnosti veću od 25, 50 ili 75 posto. Grafovi za ove vrijednosti prikazani su na slikama \ref{Klasifikacija25}, \ref{Klasifikacija50} i \ref{Klasifikacija75}, slijedom.
-
 \begin{figure}[htb]
     \centering
     \includegraphics[width=14cm]{img/Klas75.png}
@@ -180,14 +174,19 @@ vrijednost postotka sigurnosti veću od 25, 50 ili 75 posto. Grafovi za ove vrij
     \label{Klasifikacija75}
 \end{figure}
 
+Slike su u novom direktoriju organizirane u direktorije koji su nazvani po imenu razreda. 
+Za potrebe ovog rada, uzeta su tri nasumična razreda koji predstavljaju psa i tri nasumična razreda koji predstavljaju mačku. Nakon premještanja fotografija potrebno je pokrenuti skriptu koja će izvršiti testiranje
+klasifikacije. Postupak testiranja uspješnosti klasifikacije izvršavao se nad oko 100 fotografija za svaki razred. Da bi pretpostavka došla u obzir za određivanje uspješnosti klasifikacije morala je imati 
+vrijednost postotka sigurnosti veću od 25, 50 ili 75 posto. Grafovi za ove vrijednosti prikazani su na slikama \ref{Klasifikacija25}, \ref{Klasifikacija50} i \ref{Klasifikacija75}, slijedom.
+
+
 
 \section{Mobilna aplikacija}
-Nakon što završi treniranje i validacija modela, potrebno je pretvoriti model u format prikladan za mobilne uređaje, drugim riječima u tensorflow lite format. \newline Kako bi se to ostvarilo potrebno je 
+Nakon što završi treniranje i validacija modela, potrebno je pretvoriti model u format prikladan za mobilne uređaje, drugim riječima u tensorflow lite format. Kako bi se to ostvarilo potrebno je 
 zamrznuti parametre trenutnog modela čime se dobiva zamrznuti graf \engl{frozen graph}. Kao i do sada, pretvorba se odvija pomoću skripte u kojoj se navode potrebne putanje i poziva 
 metoda tensorflow sučelja. Ovaj postupak odvija se unutar virtualnog okruženja, stvorenog u anacondi na samome početku, jer su u njemu konfigurirani potrebni paketi. Nakon pretvorbe u željeni format (.tflite umjesto .pb) potrebno 
 je stvoriti novi flutter projekt. Kao razvojno okruženje koristi se Visual Studio Code, unutar kojega se instaliraju potrebne ekstenzije za Dart i Flutter. 
-
-Unutar samog projekta potrebno je dodati ovisnost \engl{dependency} o tflite paketu. Također je unutar assets direktorija potrebno dodati datoteku s labelama i sam model. 
+Unutar samog projekta potrebno je dodati ovisnost \engl{dependency} o tflite paketu. Također je unutar assets direktorija potrebno dodati datoteku s labelama i sam model.\newline
 Prvo je potrebno postaviti izgled zaslona prema korisničkim zahtjevima. Slika \ref{Flutter-main} prikazuje odsječak koda koji stvara glavnu stranicu.
 
 
