@@ -30,7 +30,7 @@ ponavlja gore navedeni postupak.\citep{DBLP:journals/corr/GirshickDDM13} \newlin
 
 \subsection{Brzi R-CNN}
 R-CNN, iako je bio veliki uspjeh, imao je svojih nedostataka.
-Tako su u radu \cite{DBLP:journals/corr/Girshick15} navedeni nedostaci R-CNN-a : 
+Tako su u radu \cite{DBLP:journals/corr/Girshick15} navedeni neki nedostaci R-CNN-a : 
 \begin{description}
     \item [Velike vremenske i prostorne složenosti:]treniranje na velikom broju regija
     \item [Detekcija objekata je spora:]detektiranje objekata je složeno zbog broja regija
@@ -38,13 +38,12 @@ Tako su u radu \cite{DBLP:journals/corr/Girshick15} navedeni nedostaci R-CNN-a :
 Kao nadogradnju na R-CNN bio je predložen SPPnet \engl{Spatial Pyramid Pooling network}, koji smanjuje 
 računanje generirajući mapu značajki za cijelu sliku.\newline Pomoću ove mape model može klasificirati svaki prijedlog objekta
 koristeći vektor značajki ekstrahiran iz same mape.
-Ovaj model bio je značajno brži od R-CNN-a (između 10 i 100 puta za vrijeme testiranja). Međutim, ovakav model je morao 
-i dalje biti treniran u više faza, te je morao spremati značajke u memoriju.\newline
+Ovaj model bio je značajno brži od R-CNN-a (između 10 i 100 puta za vrijeme testiranja). Ovaj model je međutim morao spremati značajke u memoriju.\newline
 
 Rješenje ovih problema je Brzi R-CNN sa sljedećim značajkama i prednostima:
 \begin{enumerate}
-    \item Veći mAP \engl{Mean average precision}
-    \item Treniranje se odvija u jednoj fazi koristeći MTL \engl{Multi task loss}
+    \item Veći mAP 
+    \item Treniranje se odvija u jednom prolasku kroz mrežu koristeći MTL \engl{Multi task loss}
     \item Treniranje ažurira sve slojeve mreže
     \item Nema spremanja značajki u memoriju
 \end{enumerate}
@@ -56,8 +55,6 @@ Rješenje ovih problema je Brzi R-CNN sa sljedećim značajkama i prednostima:
     \label{fig:Koncept Brzog R-CNN modela}
 \end{figure}
 
-Povećanje mAPa od velike je važnosti pri određivanju kvalitete modela jer znači da model bolje određuje poziciju objekta na slici, kao i razred kojem taj objekt 
-pripada.\newline
 Vjerojatno glavna značajka ovoga modela je regija interesa \engl{Region of interest}, koja ubrzava
 detekciju samih objekata na ulaznoj slici. 
 Značajke koje generira ovaj sloj šalju se dalje u potpuno povezane slojeve \engl{Fully connected layer} koji 
@@ -102,18 +99,18 @@ Razlog zašto je ovakav model brži i bolji za uporabu u detektiranju objekata u
 mreže koja u isto vrijeme pretpostavlja višestruke regije i razrede za iste. Glavna prednost YOLO modela je veoma velika brzina. Objekte na videozapisu može detektirati sa samo 25 milisekundi kašnjenja.\newline
 Model radi na sljedeći način \citep{DBLP:journals/corr/RedmonDGF15}:\newline
 \begin{enumerate}
-    \item Ulaznu sliku dijeli se na SxS kvadratnu mrežu, a S je proizvoljno odabran prirodni broj i predstavlja broj kvadrata u retku/stupcu mreže
+    \item Ulaznu sliku dijeli na SxS kvadratnu mrežu, a S je proizvoljno odabran prirodni broj i predstavlja broj kvadrata u retku/stupcu mreže
     \item Ako se sredina objekta nađe unutar jednog kvadrata mreže, taj kvadrat je zadužen za detektiranje tog objekta
     \item Svaki kvadrat pretpostavlja
      \begin{itemize}
-         \item  B okvira oko objekata, a B je proizvoljan prirodni broj okvira čija se težišnica nalazi unutar kvadrata.
-          Svaki od B okvira daje x i y koordinate centra okvira u odnosu na rubove kvadrata. Isto tako daje svoju širinu i 
-          visinu u odnosu na cijelu sliku i vrijednost IoU između generiranog okvira i okvira temeljne istine za taj objekt
+         \item  B okvira oko objekta, a B je proizvoljan prirodni broj okvira čija se težišnica nalazi unutar kvadrata.
+        Svaki od B okvira sadrži strukturu podataka u kojoj su zapisani podaci o x i y koordinatama centra okvira u odnosu na rubove kvadrata. Isto tako su zapisani podaci o širini i 
+          visini okvira u odnosu na cijelu sliku i vrijednost IoU između generiranog okvira i okvira temeljne istine za taj objekt
          \item  C vjerojatnosti pojave razreda iz skupa razreda, a C je broj razreda u skupu. Ove se vjerojatnosti računaju 
          samo ako je središte nekog objekta unutar kvadrata
     \end{itemize}
     \item Svaki okvir koji ima IoU manji od proizvoljne granice (na primjer 0.25 ili 0.5) se odbacuje
-    \item Na kraju se za preostale okvire računa postotak koji označava sigurnost modela da se unutar okvira nalazi objekt iz razrednog skupa (na primjer "čovjek").
+    \item Za preostale okvire se računa postotak koji označava sigurnost modela da se unutar okvira nalazi objekt iz razrednog skupa (na primjer "čovjek").
     Računa se kao umnožak IoU i vjerojatnosti pojave određenog razreda unutar kvadrata koji je zadužen za detekciju tog objekta.
 \end{enumerate}
 Slika ~\ref{fig:Rad YOLO modela} prikazuje gore navedeni postupak.
@@ -122,17 +119,17 @@ da je više kvadrata detektiralo isti objekt koristi se non-max potiskivanje. No
 \begin{figure}[htb]
     \centering
     \includegraphics[width=12cm]{img/YOLO-process.png}
-    \caption{Rad YOLO modela. Najprije je potrebno podijeliti sliku na SxS kvadratnu mrežu. Na ovoj slici je S 7 pa se dobije 49 kvadrata.
-    Zatim svaki od tih 49 kvadrata generira pretpostavljene okvire. U ovom slučaju se generiraju 2 okvira oko svakog kvadrata. Na gornjoj slici u 
-    sredini uklonjeni su kvadrati radi bolje preglednosti. Na donjoj slici u sredini su vjerojatnosti pojave razreda grupirane po bojama. Izbacuju se 
+    \caption{Rad YOLO modela. Najprije je potrebno podijeliti sliku na SxS kvadratnu mrežu. Na ovoj slici S je 7 što znači 49 kvadrata.
+    Zatim svaki od tih 49 kvadrata generira pretpostavljene okvire. U ovom slučaju generiraju se 2 okvira oko svakog kvadrata, što je prikazano na gornjoj sličici u sredini.
+    Radi preglednosti su uklonjeni kvadrati. Na donjoj slici u sredini su vjerojatnosti pojave razreda grupirane po bojama. Izbacuju se 
     okviri s neodgovarajućom vrijednosti IoU. Zatim se množe vrijednost IoU iz preostalih okvira i vjerojatnost pojave razreda iz kvadrata oko kojih ti okviri jesu
-    kako bi se dobili konačni okviri. 
+    kako bi se dobili konačni okviri prikazani na posljednoj sličici. 
      Slika preuzeta iz \citep{DBLP:journals/corr/RedmonDGF15}}
     \label{fig:Rad YOLO modela} 
 \end{figure}
 
-Ograničenja su vidljiva prilikom detekcije manjih objekata u grupi, jer prilikom pretpostavljanja regija  i određivanja 
-razreda svaki kvadrat na koordinatnoj mreži može sadržavati samo dvije takve regije i jedan razred. 
+Ograničenja su vidljiva prilikom detekcije manjih objekata u grupi, jer prilikom pretpostavljanja okvira  i određivanja 
+razreda svaki kvadrat na kvadratnoj mreži može imati zapisane informacije o samo dva okvira i jednom razredu. 
 YOLO, za razliku od RCNN-a, u obzir uzima cijelu sliku prilikom generiranja pretpostavki. Time smanjuje
 stopu pogrešaka, jer ne obrađuje pozadine koje ne predstavljaju niti jedan razred. Ovaj model neće podbaciti kada se na ulazu nađe novi, dosad neviđeni 
 objekt, jer ima veliku sposobnost generalizacije.\citep{DBLP:journals/corr/RedmonDGF15}   
@@ -175,7 +172,7 @@ za taj okvir. Na slici \ref{SSD okvir} prikazan je primjer generiranja okvira. S
     \centering
     \includegraphics[width=10cm]{img/SSD-okviri.png}
     \caption{Lijevo na slici nalazi se originalna fotografija. Na desnoj slici vidi se generiranje četiri okvira oko pretpostavljenog objekta za kvadrat koji se 
-    nalazi u 5 retku i 4 stupcu 8x8 mreže. Treba napomenuti da se ovaj postupak izvodi u prvom sloju koji je dimenzija 38x38, a da je zbog jednostavnijeg prikaza 
+    nalazi u 5 retku i 4 stupcu 8x8 mreže. Treba napomenuti da bi se ovaj postupak trebao izvodi u sloju koji je dimenzija 38x38, a da je zbog jednostavnijeg prikaza 
     taj sloj na slici prikazan kao kvadratna mreža dimenzija 8x8. U slojevima s manjim dimenzijama (8x8 ili 4x4) generira se šest pretpostavki}
     \label{SSD okvir}
 \end{figure}

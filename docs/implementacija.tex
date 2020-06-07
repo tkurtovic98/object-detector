@@ -46,11 +46,13 @@ Model koji se koristi za implementaciju metode detekcije objekata je SSD MobileN
 Razlog odabira ovog modela mogućnost je treniranja pomoću tranzitivnog učenja na Googleovom oblaku, što je detaljnije pojašnjeno u nastavku.
 SSD MobileNet inačica je SSD-a prilagođena za izvođenje na mobilnim uređajima.
 
-Ograničenost vlastitih računalnih i vremenskih resursa zahtijeva preuzimanje treniranog modela koji ima postavljene parametre i arhitekturu te treniranje modela korištenjem tehnike tranzitivnog učenja.
+Ograničenost vlastitih računalnih i vremenskih resursa zahtijeva preuzimanje unaprijed treniranog modela koji ima postavljene parametre i arhitekturu te treniranje modela korištenjem tehnike tranzitivnog učenja.
+Tranzitivno učenje tehnika je u kojem se treniranje ne započinje od početka, nego od određene kontrolne točke na unaprijed treniranom modelu. Kontrolna točka je datoteka u kojoj se nalaze informacije o definiranim parametrima prilikom treniranja modela. 
 Na službenom github repozitoriju\footnote{\url{https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md}}
-postoje mnogi različiti modeli koji se mogu koristiti za tranzitivno učenje. Ovaj model \footnote{\url{http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_0.75_depth_quantized_300x300_coco14_sync_2018_07_18.tar.gz}}
+postoje mnogi različiti modeli koji se mogu koristiti za tranzitivno učenje. 
+Ovaj model \footnote{\url{http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_0.75_depth_quantized_300x300_coco14_sync_2018_07_18.tar.gz}}
 izabran je zbog kompatibilnosti izvođenja na TPU, što omogućuje brže treniranje. Nakon preuzimanja modela kontrolne točke bile su kopirane u isti direktorij gdje se nalaze i datoteke koje služe za treniranje.
-Kontrolna točka je datoteka u kojoj se nalaze informacije o unaprijed definiranim parametrima modela. 
+
 Kako se koristi unaprijed trenirani model s konfiguriranom arhitekturom i parametrima potrebno je, osim postavljanja kontrolnih točaka, postaviti konfiguracijsku datoteku u kojoj se zapisuju podaci bitni za daljnje treniranje i
 validaciju istreniranog modela. U konfiguracijskoj datoteci postavljaju se vrijednosti poput broja razreda, broja kontrolnih primjeraka i funkcije za računanje stope učenja. 
 Odsječak iz ove datoteke vidljiv je na slici \ref{Pipeline}.
@@ -97,7 +99,7 @@ nema značajnijih promjena, tako da se može smanjiti broj koraka treniranja či
     \centering
     \includegraphics[width=12cm]{img/class-loss.png}
     \caption{Pogreška prilikom klasifikacije tokom treniranja. X os predstavlja broj koraka ili iteracija. Y os predstavlja 
-    za koliko je primjera razreda iz skupa bilo pogrešno klasificiranih objekata.}
+    broj primjera iz skupa fotografija za koje je određivanje razreda bilo pogrešno.}
     \label{Class-Loss}
 \end{figure}
 
@@ -139,15 +141,16 @@ Prilikom validacije treniranog modela računa se mAP vrijednost za sve razrede i
 \begin{figure}[htb]
     \centering
     \includegraphics[width=14cm]{img/eval-mAP.png}
-    \caption{X os predstavlja broj koraka ili iteracija, a Y os predstavlja mAP vrijednost u pojedinom koraku mAP za vrijednosti IoU veće od 0.75.}
+    \caption{X os predstavlja broj koraka ili iteracija, a Y os predstavlja mAP vrijednost u pojedinom koraku mAP za vrijednosti IoU veće od 0.75}
     \label{Eval-mAP}
 \end{figure}
 
-Iz grafa na slici \ref{Eval-mAP} vidljivo je da je preciznost bila to veća što je model bio istreniraniji, što je u skladu s očekivanjima. 
+Iz grafa na slici \ref{Eval-mAP} vidljivo je da je preciznost bila to veća što je model bio istreniraniji, što je u skladu s očekivanjima. Isto tako je potrebno uočiti 
+kako se vrijednost mAPa nakon 40 tisuća koraka nije značajno promijenila i kreće stagnirati. Broj iteracija može se smanjiti kako bi se uštedjelo na računalnim resursima.  
 
-Uz validaciju koja je davala rezultate tokom treniranja, potrebno je predstaviti rezutate klasifikacije na primjerima za testiranje. Primjeri su uzeti iz istog skupa fotografija, ali ove fotografije
-model nije do sada analizirao. Testiranje se provodi automatski uz pomoć samostalno napisanih skripti koje su dostupne na guthub repozitoriju \footnote{\url{https://github.com/tkurtovic98/tflite_model_testing}}.
-Skripte su napisane u pythonu i služe za premještanje slika koje služe za testiranje u novi direktorij. 
+Uz validaciju koja je davala rezultate tokom treniranja, potrebno je predstaviti rezutate na primjerima za testiranje. Primjeri su uzeti iz istog skupa fotografija, ali ove fotografije
+model do sada nije analizirao. Testiranje se provodi automatski uz pomoć samostalno napisanih skripti koje su dostupne na guthub repozitoriju \footnote{\url{https://github.com/tkurtovic98/tflite_model_testing}}.
+Skripte su napisane u Pythonu.
 
 \begin{figure}[htb]
     \centering
@@ -163,6 +166,12 @@ Skripte su napisane u pythonu i služe za premještanje slika koje služe za tes
     \label{Klasifikacija50}
 \end{figure}
 
+
+Slike su u novom direktoriju organizirane u direktorije koji su nazvani po imenu razreda. 
+Za potrebe ovog rada, uzeta su tri nasumična razreda koji predstavljaju psa i tri nasumična razreda koji predstavljaju mačku. Nakon premještanja fotografija potrebno je pokrenuti skriptu koja će izvršiti testiranje
+klasifikacije. Postupak testiranja uspješnosti klasifikacije izvršavao se nad oko 100 fotografija za svaki razred. Da bi pretpostavka došla u obzir za određivanje uspješnosti klasifikacije morala je imati 
+vrijednost postotka sigurnosti veću od 25, 50 ili 75 posto. Grafovi za ove vrijednosti prikazani su na slikama \ref{Klasifikacija25}, \ref{Klasifikacija50} i \ref{Klasifikacija75}, respektivno.
+
 \begin{figure}[htb]
     \centering
     \includegraphics[width=14cm]{img/Klas75.png}
@@ -170,11 +179,6 @@ Skripte su napisane u pythonu i služe za premještanje slika koje služe za tes
     \label{Klasifikacija75}
 \end{figure}
 
-
-Slike su u novom direktoriju organizirane u direktorije koji su nazvani po imenu razreda. 
-Za potrebe ovog rada, uzeta su tri nasumična razreda koji predstavljaju psa i tri nasumična razreda koji predstavljaju mačku. Nakon premještanja fotografija potrebno je pokrenuti skriptu koja će izvršiti testiranje
-klasifikacije. Postupak testiranja uspješnosti klasifikacije izvršavao se nad oko 100 fotografija za svaki razred. Da bi pretpostavka došla u obzir za određivanje uspješnosti klasifikacije morala je imati 
-vrijednost postotka sigurnosti veću od 25, 50 ili 75 posto. Grafovi za ove vrijednosti prikazani su na slikama \ref{Klasifikacija25}, \ref{Klasifikacija50} i \ref{Klasifikacija75}, respektivno.
 
 \section{Mobilna aplikacija}
 Nakon što završi treniranje i validacija modela, potrebno je pretvoriti model u format prikladan za mobilne uređaje, drugim riječima u tensorflow lite format. \newline Kako bi se to ostvarilo potrebno je 
@@ -207,9 +211,8 @@ unutar statičkog okruženja prikazuje rezultat na slici.
 
 \section{Testiranje aplikacije}
 U završnom djelu razvoja potrebno je testirati zadovoljava li razvijena aplikacija zahtjeve koji su izneseni na početku ovog rada. Aplikacija nudi odabir 
-detektiranja na statičkim slikama ili videozapisu u stvarnom vremenu. Model se dohvaća lokalno i nema potrebe za internetskom vezom. Razlog je postavljanje modela 
-u direktorij same aplikacije.
-Na slici \ref{fig:CAT_Eval} su vidljive snimke zaslona prilikom korištenja aplikacije. 
+detektiranja na statičkim slikama ili videozapisu u stvarnom vremenu. Model se dohvaća lokalno i nema potrebe za internetskom vezom.
+Na slici \ref{fig:CAT_Eval} vidljive su snimke zaslona prilikom korištenja aplikacije. 
 Prva i treća snimka zaslona prikazuje aplikaciju prilikom detektiranja statičkih fotografija preuzetih s interneta, dok druga prikazuje rad aplikacije pri detektiranju u stvarnom vremenu snimljeno vlastitim uređajem.
 
 
